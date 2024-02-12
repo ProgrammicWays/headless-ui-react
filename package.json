@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack --config webpack.config.js --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tscheck": "tsc"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
   },
   "dependencies": {
     "babel-plugin-module-resolver": "^5.0.0",
+    "classnames": "^2.5.1",
     "react-router-dom": "^6.21.3"
   }
 }
