@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from '#root/src/components/common/Button/Button';
 import Dropdown, { Item } from '../../common/Dropdown/Dropdown';
+import ReviewsCarousel, { Review } from '../../common/Carousel/ReviewsCarousel';
+import PicturesCarousel, { Picture } from '../../common/Carousel/PicturesCarousel';
 
 const HomePage = () => {
   const stringItems = [
@@ -26,6 +28,46 @@ const HomePage = () => {
   const handleSelect = (item: Item<string>) => {
     console.log('Selected item:', item);
   };
+
+  const reviewsData: Review[] = [
+    {
+      id: 1,
+      title: 'Great product!',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      rating: 5
+    },
+    {
+      id: 2,
+      title: 'Not bad',
+      content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      rating: 3
+    },
+    {
+      id: 3,
+      title: 'Could be better',
+      content:
+        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      rating: 2
+    }
+  ];
+
+  const picturesData: Picture[] = [
+    {
+      id: 1,
+      url: 'https://images.unsplash.com/photo-1609805620003-2a785a3b8a56?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Picture 1'
+    },
+    {
+      id: 2,
+      url: 'https://images.unsplash.com/photo-1610465299993-e6675c9f9efa?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Picture 2'
+    },
+    {
+      id: 3,
+      url: 'https://images.unsplash.com/photo-1461696114087-397271a7aedc?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Picture 3'
+    }
+  ];
 
   return (
     <>
@@ -64,8 +106,13 @@ const HomePage = () => {
       />
 
       <h2>Object Dropdown Example</h2>
-      {/* Render the Dropdown component with the object items */}
-      <Dropdown items={objectItems} onSelect={handleObjectSelect} />
+      {/* Render the Dropdown component with the object items
+      <Dropdown items={objectItems} onSelect={handleObjectSelect} /> */}
+      <h3>Reviews Carousel</h3>
+      <ReviewsCarousel reviews={reviewsData} />
+
+      <h3>Pictures Carousel</h3>
+      <PicturesCarousel pictures={picturesData} />
     </>
   );
 };
